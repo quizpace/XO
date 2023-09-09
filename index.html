@@ -1,0 +1,78 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to the Chokokutai and Rubik Moonrocks fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+</head>
+  <body>
+    <img src="spaceship.png" id="spaceShip" />
+    <img src="spaceship2.png" id="spaceShip2" />
+    <img src="jup.png" id="venus2" />
+    <img src="earth2.png" id="saturn" />
+    <img src="aship.png" id="aship" />
+    <img src="moon.png" id="moon" />
+    <img src="purple.png" id="purple" />
+    <img src="blackh.png" id="purple2" />
+    <audio id="background-music" muted autoplay loop>
+      <source src="TicTacToeSpace.mp3" type="audio/mpeg">
+    </audio>
+      <audio id="x-turn-sound" src="XPLAY.mp3" preload="auto"></audio>
+      <audio id="o-turn-sound" src="OPLAY.mp3" preload="auto"></audio>
+      <audio id="click-sound" src="CLICK.mp3"></audio>
+    </audio>    
+    <div class="main"></div>
+    <div class="board" id="board">
+      <div class="cell" id="cell0" data-cell></div>
+      <div class="cell" id="cell1" data-cell></div>
+      <div class="cell" id="cell2" data-cell></div>
+      <div class="cell" id="cell3" data-cell></div>
+      <div class="cell" id="cell4" data-cell></div>
+      <div class="cell" id="cell5" data-cell></div>
+      <div class="cell" id="cell6" data-cell></div>
+      <div class="cell" id="cell7" data-cell></div>
+      <div class="cell" id="cell8" data-cell></div>
+    </div>
+    <div class="winning-message" id="winningMessage">
+      <img src="spaceship.png" id="spaceShip" />
+      <img src="spaceship2.png" id="spaceShip2" />
+
+      <!-- <img src="aship.png" id="alien" /> -->
+      <img src="alienv.png" id="alien1" />
+      <img src="alien2.png" id="alien2" />
+      <img src="moon.png" id="moon" />
+      <img src="purple.png" id="purple" />
+      <img src="earth2.png" id="earth" />
+      <img src="earth2.png" id="earth2" />
+      <img src="earth2.png" id="earth3" />
+      <img src="blackh.png" id="purple3" />
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</button>
+    </div>
+    <div class="user-or-computer" id="userOrComputer">
+        <div id="userVsCom">
+          <span>Human VS Alien</span>
+        </div>
+        <div id="userVsUser">
+          <span>Human VS Human</span>
+        </div>
+      </div>
+
+
+  
+    <div class="main-menu" id="mainMenu">
+      <div id="mainMenuButton">
+        <span>Main Menu</span>
+        <div id="fullscreen-button">🕹️🎮</div>
+        </div>
+      <div id="mute-buttons">🔊</div>
+    </div>
+    </div>
+    <div class="sunmusic" id="musicsun">
+      <img src="musicsun.png" id="sun1" />
+      <img src="sun.png" id="sun"></img>
+    </div>
+  </body>
+</html>
