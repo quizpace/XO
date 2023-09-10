@@ -158,9 +158,11 @@ body {
 #aship {
   width: 10%;
   position: absolute;
+  opacity: 0.2;
   animation: moveAround 100s linear infinite;
   transform-origin: center center;
-  filter: drop-shadow(0 0 0.4vmin #93f818);
+  filter: drop-shadow(0 0 0.6vmin #e84037);
+  /* filter: drop-shadow(0 0 0.4vmin #abfd1d); */
 }
 
 #alien {
@@ -173,6 +175,7 @@ body {
 }
 
 #alien1 {
+  display: none;
   width: 17%;
   position: absolute;
   animation: moveAroundSpin 100s linear infinite;
@@ -186,7 +189,11 @@ body {
   animation: moveAround 30s linear infinite;
   animation: moveAroundSpin 15s linear infinite;
   transform-origin: center center;
-  opacity: 0.2;
+  opacity: 0.23;
+}
+
+#alien1.show {
+  display: flex;
 }
 
 /* #alien2:hover {
@@ -198,20 +205,81 @@ body {
   filter: drop-shadow(0 0 2vmin #f6c125);
 } */
 
-#spaceShip {
-  width: 11%;
+#salien {
+  width: 6%;
   position: absolute;
-  top: 4%; /* Adjust the top position */
-  left: 10%; /* Adjust the left position */
-  animation: spinAndMove 5s linear infinite; /* Adjust the animation duration as needed */
+  opacity: 0.8;
+  top: 10%; /* Adjust the top position */
+  left: 80%; /* Adjust the left position */
+  animation: spinAndMove 20s linear infinite; /* Adjust the animation duration as needed */
   transform-origin: center center; /* Set the rotation origin to the center of the image */
+  filter: drop-shadow(0 0 0.65vmin #abfd1d);
 }
 
-#spaceShip {
-  width: 11%;
+#salien:hover {
+  width: 6%;
+  position: absolute;
+  opacity: 1;
+  top: 10%; /* Adjust the top position */
+  left: 80%; /* Adjust the left position */
+  animation: spinAndMove 2s linear infinite; /* Adjust the animation duration as needed */
+  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  filter: drop-shadow(0 0 0.65vmin #abfd1d);
+}
+
+#glas {
+  width: 10%;
+  top: 34%; /* Adjust the top position */
+  left: 6%;
+  position: absolute;
+  /* Adjust the animation duration as needed */
+  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  opacity: 0.1;
+  filter: drop-shadow(0 0 1vmin #ccfd1d);
+}
+
+#glas:hover {
+  width: 10%;
+  top: 34%; /* Adjust the top position */
+  left: 6%;
+  position: absolute;
+  /* Adjust the animation duration as needed */
+  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  opacity: 1;
+  filter: drop-shadow(0 0 1vmin #ccfd1d);
+}
+
+#warning {
+  width: 9%;
+  top: 50%; /* Adjust the top position */
+  left: 6%;
+  position: absolute;
+  /* Adjust the animation duration as needed */
+  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  opacity: 0.06;
+  filter: drop-shadow(0 0 1vmin #ccfd1d);
+}
+
+
+#warning:hover {
+  width: 9%;
+  top: 50%; /* Adjust the top position */
+  left: 6%;
+  position: absolute;
+  /* Adjust the animation duration as needed */
+  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  opacity: 1;
+  filter: drop-shadow(0 0 1vmin #82fd1d);
+}
+
+#area51 {
+  width: 6%;
+  top: 8%;
   position: absolute;
   animation: spinAndMove 10s linear infinite; /* Adjust the animation duration as needed */
-  transform-origin: center center; /* Set the rotation origin to the center of the image */
+  transform-origin: center center;
+  filter: drop-shadow(0 0 1vmin #befd1d);
+  opacity: 0.6;
 }
 
 #spaceShip2 {
@@ -221,42 +289,35 @@ body {
   left: 70%; /* Adjust the left position */
   animation: spinAndMove 25s linear infinite; /* Adjust the animation duration as needed */
   transform-origin: center center; /* Set the rotation origin to the center of the image */
+  opacity: 0.4;
 }
-
 #moon {
   position: absolute;
-  top: 10vh;
-  left: 3%;
+  top: 41vh;
+  left: 26%;
   right: 98%;
   height: 10vmin;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 3vmin #abedf3);
-}
-
-#moon:hover {
-  position: absolute;
-  top: 10vh;
-  left: 3%;
-  right: 98%;
-  height: 10vmin;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 1;
+  opacity: 0.14;
+  filter: blur(50px);
   filter: drop-shadow(0 0 2vmin #abedf3);
 }
 
+
+
+
 #purple {
   position: absolute;
-  top: 10vh;
-  left: 80%;
+  top: 40vh;
+  left: 20%;
   right: 5%;
   height: 20vmin;
   margin-left: auto;
   margin-right: auto;
   z-index: 0;
-  filter: drop-shadow(0 0 7vmin #c2f7ee);
+  opacity: 0.3;
+  filter: drop-shadow(0 0 3vmin #be70ef);
 }
 
 #purple:hover {
@@ -268,52 +329,50 @@ body {
   margin-left: auto;
   margin-right: auto;
   z-index: 0;
-  filter: drop-shadow(0 0 3vmin #91cea2);
+  filter: drop-shadow(0 0 3vmin #7811b8);
 }
+
+#planetearth {
+  position: absolute;
+  width: 10%; /* Adjust the width to make it smaller */
+  top: 70%; /* Adjust the top position in pixels */
+  left: 37%; /* Adjust the left position in pixels */
+  filter: drop-shadow(0 0 1vmin #87a3cf);
+  opacity: 0.27;
+  animation: float-in-space 5s ease-in-out infinite; /* Adjust the animation duration as needed */
+}
+
+
 
 #purple2 {
   position: absolute;
-  top: 50vh;
-  left: 0%;
-  right: 75%;
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
-  margin-left: auto;
-  margin-right: auto;
+  color: #e84037;
+  top: 47vh;
+  left: 11%;
+  transform: translateX(-50%);
+  width: 30vmin;
+  height: 30vmin;
   z-index: 0;
-  opacity: 0.4;
-  filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 7s linear infinite;
+  opacity: 0.6;
+  display: inline-block;
+  border-radius: 50%;
+  animation: float-in-space 2s ease-in-out infinite;
 }
 
 #purple2:hover {
   position: absolute;
-  top: 52vh;
-  left: 0%;
-  right: 70%;
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
+  color: #e84037;
+  top: 47vh;
+  left: 11%;
+  transform: translateX(-50%);
+  width: 30vmin;
+  height: 30vmin;
   margin-left: auto;
   margin-right: auto;
   z-index: 0;
   opacity: 0.9;
   filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 1s linear infinite;
-}
-
-#purple3 {
-  position: absolute;
-  top: 30vh;
-  left: 0%;
-  right: 65%;
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-  opacity: 1;
-  filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 0.2s linear infinite;
+  animation: spin 6s linear infinite;
 }
 
 #purple4res {
@@ -331,70 +390,6 @@ body {
   animation: spin 10s linear infinite;
 }
 
-#earth {
-  position: absolute;
-  top: 30vh;
-  left: 0%;
-  right: 65%;
-  /* left: 0px; */
-  /* right: 1000px; */
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-  opacity: 1;
-  filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 0.2s linear infinite;
-}
-
-#earth2 {
-  position: absolute;
-  top: 30vh;
-  left: 77%;
-  right: 15%;
-  /* left: 1120px; */
-  /* right: 1000px; */
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-  opacity: 0.6;
-  filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 0.2s linear infinite;
-}
-
-#earth2:hover {
-  position: absolute;
-  top: 30vh;
-  left: 77%;
-  right: 15%;
-  width: 22vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 25vmin;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-  opacity: 0.2;
-  filter: drop-shadow(0 0 6vmin #6104ad);
-  animation: spin 0.5s linear infinite;
-}
-
-#earth3 {
-  position: absolute;
-  top: 6vh;
-  left: 36%;
-  right: 90%;
-  width: 47vmin; /* פרמטר הרוחב שווה ל-22vmin כך שהתמונה תהיה מעגל מושלם */
-  height: 28vmin;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 0;
-  opacity: 1;
-  filter: drop-shadow(0 0 3vmin #c0f6eb);
-  animation: spin 20s linear infinite;
-}
-
 #earth3:hover {
   position: absolute;
   top: 6vh;
@@ -410,42 +405,22 @@ body {
   animation: spin 2s linear infinite;
 }
 
-#venus2 {
+#jup {
   position: absolute;
-  width: 7%; /* Adjust the width to make it smaller */
+  width: 6%; /* Adjust the width to make it smaller */
+  top: 18%; /* Adjust the top position in pixels */
+  left: 39%; /* Adjust the left position in pixels */
+  opacity: 0.13;
+  filter: drop-shadow(0 0 2vmin #d88b50);
+}
+
+#jup:hover {
+  position: absolute;
+  width: 6%; /* Adjust the width to make it smaller */
   top: 40%; /* Adjust the top position in pixels */
   left: 90%; /* Adjust the left position in pixels */
-  opacity: 0.7;
-  filter: drop-shadow(0 0 2vmin #cfa687);
-}
-
-#venus2:hover {
-  position: absolute;
-  width: 100px; /* Adjust the width to make it smaller */
-  top: 40%; /* Adjust the top position in pixels */
-  left: 90%; /* Adjust the left position in pixels */
-  opacity: 0.8;
-  filter: drop-shadow(0 0 2vmin #cfa687);
-}
-
-#saturn {
-  position: absolute;
-  width: 10%; /* Adjust the width to make it smaller */
-  top: 32%; /* Adjust the top position in pixels */
-  left: 3%; /* Adjust the left position in pixels */
-  filter: drop-shadow(0 0 2vmin #87a3cf);
-  opacity: 0.8;
-  animation: float-in-space 5s ease-in-out infinite; /* Adjust the animation duration as needed */
-}
-
-#saturn:hover {
-  position: absolute;
-  width: 10%; /* Adjust the width to make it smaller */
-  top: 32%; /* Adjust the top position in pixels */
-  left: 3%; /* Adjust the left position in pixels */
-  filter: drop-shadow(0 0 7vmin #87a3cf);
-  opacity: 1;
-  animation: float-in-space 5s ease-in-out infinite; /* Adjust the animation duration as needed */
+  opacity: 0.4;
+  filter: drop-shadow(0 0 2vmin #a75d25);
 }
 
 /* Apply Rubik Iso font to buttons and add animation */
@@ -459,15 +434,15 @@ body {
   font-family: "Rubik Moonrocks", sans-serif;
 }
 
-
 .sunmusic {
-  position: relative; /* Make the container a positioning context */
-  width: 2%; /* Set the width to whatever suits your layout */
-  height: 2%; /* Set the height to whatever suits your layout */
+  position: fixed; /* Make the container a positioning context */
+  width: 24%; /* Set the width to whatever suits your layout */
+  height: 14%; /* Set the height to whatever suits your layout */
 }
 
-#sun, #sun1 {
+#sun {
   border: none;
+  color: #e84037;
   padding: 1% 2%;
   height: 20vmin;
   border-radius: 100%;
@@ -479,12 +454,37 @@ body {
   opacity: 0.7;
 }
 
-#sun:hover, #sun1:hover {
+#on {
+  border: none;
+  color: #e84037;
+  padding: 1% 2%;
+  height: 20vmin;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 10%; /* Adjust this value to control the distance from the bottom */
+  right: 60%; /* Adjust this value to control the distance from the left */
+  z-index: 2;
+  opacity: 0.7;
+}
+
+#off {
+  border: none;
+  color: #e84037;
+  padding: 1% 2%;
+  height: 20vmin;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 10%; /* Adjust this value to control the distance from the bottom */
+  left: 40%; /* Adjust this value to control the distance from the left */
+  z-index: 2;
+  opacity: 0.7;
+}
+
+#sun:hover {
   opacity: 100%;
   transform: rotate(2deg);
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Add transitions for a smooth effect */
 }
-
 
 #mute-buttons {
   font-size: 200%;
@@ -531,7 +531,10 @@ body {
 
 /* Apply Rubik Iso font to buttons and add animation */
 #userVsCom,
-#mainMenuButton  {
+#mainMenuButton,
+.winning-message,
+#restartButton,
+#purple2 {
   font-family: "Orbitron", sans-serif;
   transition: transform 0.2s ease-in-out;
 }
@@ -634,9 +637,12 @@ body {
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, auto);
+
   /* filter: drop-shadow(0 0 0vmin #37f5cf); */
   /* filter: drop-shadow(0 0 1vmin #59039b); */
-  
+}
+.boardglow {
+  filter: drop-shadow(0 0 1vmin #59039b);
 }
 
 .cell {
@@ -650,6 +656,7 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
   animation: spin 3s linear 1s 1 normal forwards; /* Add the spin animation here */
+  filter: drop-shadow(0 0 0.1vmin #733a76);
 }
 
 @keyframes spin {
@@ -661,11 +668,10 @@ body {
   }
 }
 
-
 .cell:hover {
-  box-shadow: 0 0 3px 1px rgba(222, 222, 228, 0.7),
+  box-shadow: 0 0 9px 1px rgba(103, 4, 123, 0.7),
     0 0 5px 2px rgba(227, 231, 221, 0.5), 0 0 5px 5px rgba(240, 239, 235, 0.5),
-    0 0 5px 2px rgba(251, 249, 252, 0.7), 0 0 5px 1px rgba(242, 240, 246, 0.3);
+    0 0 5px 2px rgba(130, 27, 181, 0.7), 0 0 5px 1px rgba(129, 7, 228, 0.3);
   opacity: 0.9;
 }
 
@@ -706,7 +712,7 @@ body {
 .cell.x::after {
   background-color: #b4d950;
   box-shadow: 0 0 2px #b4d950;
-  filter: drop-shadow(0 0 1vmin #b4d950);
+  /* filter: drop-shadow(0 0 1vmin #b4d950); */
   /* border-radius: 50%; */
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
@@ -714,7 +720,7 @@ body {
 .cell.circle::before {
   background-color: #e2662e;
   box-shadow: 0 0 5px #e2662e;
-  filter: drop-shadow(0 0 1vmin #e2662e);
+  /* filter: drop-shadow(0 0 1vmin #e2662e); */
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
 
@@ -821,13 +827,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
 #userVsCom,
 #userVsUser {
   font-size: 5rem;
-color: #e84037;
+  color: #e84037;
   border: 3px solid transparent;
   padding: 0.25em 0.5em;
   cursor: pointer;
@@ -857,12 +862,13 @@ color: #e84037;
 .main-menu {
   position: fixed;
   bottom: 1%;
-  right: 1%;;
+  right: 1%;
   z-index: 1000;
 }
 
 /* Style the main menu button */
-#mainMenuButton {
+#mainMenuButton,
+#fullscreen-button {
   font-size: 1.9rem;
   color: #e84037;
   cursor: pointer;
@@ -871,8 +877,8 @@ color: #e84037;
   transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-#mainMenuButton:hover {
-
+#mainMenuButton:hover,
+#fullscreen-button:hover {
   color: #e84037;
   opacity: 0.8;
 }
@@ -889,7 +895,6 @@ color: #e84037;
   border-color: rgb(228, 245, 130);
   opacity: 0.8;
 }
-
 
 @keyframes draw-cell-animation {
   0% {
@@ -942,34 +947,37 @@ color: #e84037;
   width: 28vh;
   background-image: url("drawin.png"); /* Replace with the path to your image */
   background-size: cover; /* Scale the background image to cover the element */
-  animation: winning-cell-x-animation 1s ease-in-out,
+  animation: winning-cell-x-animation 2s ease-in-out,
     draw-cell-animation 2s ease-in-out infinite,
     crazy-animation 2s linear infinite; /* Apply the "crazy" animation */
   box-shadow: 0 0 50px rgba(200, 209, 229, 0.7);
+  opacity: 0.2;
   /* Adjust the color and spread (50px in this example) to control the glow effect */
 }
 
 .winning-cell-x {
   height: 38vh;
   width: 38vh;
-  border-radius: 20%;
+  border-radius: 5%;
   background-image: url("galaxys.png"); /* הפנייה לקובץ התמונה או הטקסטורה */
   background-size: cover; /* כדי להתאים את התמונה לגודל הרקע */
   animation: winning-cell-x-animation 1s ease-in-out,
     draw-cell-animation 5s ease-in-out infinite;
-  box-shadow: 0 0 50px rgba(82, 8, 243, 0.7);
+  /* box-shadow: 0 0 40px rgba(82, 8, 243, 0.7); */
+  box-shadow: 0 0 40px #733a76;
   /* ניתן להתאים את הצבע והגודל (10px בדוגמה זו) כדי לשלוט באפקט ההארה */
 }
 
 .winning-cell-o {
   height: 32vh;
   width: 32vh;
-  border-radius: 20%;
+  border-radius: 4%;
   background-image: url("orange.png"); /* הפנייה לקובץ התמונה או הטקסטורה */
   background-size: cover; /* כדי להתאים את התמונה לגודל הרקע */
   animation: winning-cell-x-animation 1s ease-in-out,
     draw-cell-animation 5s ease-in-out infinite;
-  box-shadow: 0 0 50px rgba(82, 8, 243, 0.7);
+  /* box-shadow: 0 0 40px rgba(82, 8, 243, 0.7); */
+  box-shadow: 0 0 40px #733a76;
   /* ניתן להתאים את הצבע והגודל (10px בדוגמה זו) כדי לשלוט באפקט ההארה */
 }
 
@@ -1009,10 +1017,11 @@ color: #e84037;
   right: 0;
   bottom: 0;
   /* background-color: rgba(2, 45, 2, 0.9); */
-  background-color: rgba(2, 20, 45, 0.9);
+  /* background-color: rgba(29, 0, 30, 0.9); */
+  background-color: rgba(24, 2, 39, 0.9);
   justify-content: center;
   align-items: center;
-  color: rgb(142, 220, 251);
+  color: #e84037;
   font-size: 10rem;
   flex-direction: column;
   opacity: 0.85;
@@ -1025,7 +1034,7 @@ color: #e84037;
   padding: 0.25em 0.5em;
   cursor: pointer;
   color: black;
-  opacity: 0.7;
+  opacity: 0.5;
   border-radius: 22%;
   transition: box-shadow 0.3s ease-in-out, background-color 0.5s ease-in-out; /* Smooth transition for the glow and background color */
 }
@@ -1038,7 +1047,7 @@ color: #e84037;
 
 .winning-message button:hover {
   background-color: rgb(0, 0, 0);
-  color: rgb(241, 55, 210);
+  color: #e84037;
   border-color: rgb(142, 201, 32);
 }
 

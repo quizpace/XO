@@ -8,14 +8,22 @@
     <title>Tic-Tac-Toe</title>
 </head>
   <body>
-    <img src="spaceship.png" id="spaceShip" />
+
     <img src="spaceship2.png" id="spaceShip2" />
-    <img src="jup.png" id="venus2" />
-    <img src="earth2.png" id="saturn" />
+    <!-- <img src="jup.png" id="jup" /> -->
+    <div class="circleT">
+    <!-- <img src="earth2.png" id="planetearth" /> -->
+    </div>
+
+    </div>
     <img src="aship.png" id="aship" />
-    <img src="moon.png" id="moon" />
+    <!-- <img src="crazyp.png" id="moon" /> -->
     <img src="purple.png" id="purple" />
-    <img src="blackh.png" id="purple2" />
+    <img src="glas.png" id="glas" />
+    <img src="warning.png" id="warning" />
+    <!-- <img src="area51.png" id="area51" /> -->
+    <img src="salien.png" id="salien" />
+    <!-- <span id="purple2">WARNING!</span> -->
     <audio id="background-music" muted autoplay loop>
       <source src="TicTacToeSpace.mp3" type="audio/mpeg">
     </audio>
@@ -36,18 +44,16 @@
       <div class="cell" id="cell8" data-cell></div>
     </div>
     <div class="winning-message" id="winningMessage">
-      <img src="spaceship.png" id="spaceShip" />
+
       <img src="spaceship2.png" id="spaceShip2" />
 
-      <!-- <img src="aship.png" id="alien" /> -->
+
       <img src="alienv.png" id="alien1" />
       <img src="alien2.png" id="alien2" />
-      <img src="moon.png" id="moon" />
-      <img src="purple.png" id="purple" />
-      <img src="earth2.png" id="earth" />
-      <img src="earth2.png" id="earth2" />
-      <img src="earth2.png" id="earth3" />
-      <img src="blackh.png" id="purple3" />
+      <img id="earth" />
+      <img id="earth2" />
+      <img id="earth3" />
+      <img id="purple3" />
       <div data-winning-message-text></div>
       <button id="restartButton">Restart</button>
     </div>
@@ -58,21 +64,20 @@
         <div id="userVsUser">
           <span>Human VS Human</span>
         </div>
-      </div>
-
-
-  
+      </div>  
     <div class="main-menu" id="mainMenu">
       <div id="mainMenuButton">
         <span>Main Menu</span>
-        <div id="fullscreen-button">🕹️🎮</div>
-        </div>
+      </div>
+        <!-- <div id="fullscreen-button">🕹️🎮</div> -->
+                <div id="fullscreen-button">📽️</div>
       <div id="mute-buttons">🔊</div>
     </div>
     </div>
     <div class="sunmusic" id="musicsun">
-      <img src="musicsun.png" id="sun1" />
-      <img src="sun.png" id="sun"></img>
+      <div id="sun">sound</div>
+      <div id="on">on</div>
+      <div id="off">off</div>
     </div>
   </body>
 </html>

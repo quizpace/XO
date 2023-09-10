@@ -16,7 +16,7 @@ const backgroundMusic = document.getElementById("background-music");
 const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("winningMessage");
-
+const alien1Element = document.getElementById("alien1");
 const userOrComputerElement = document.getElementById("userOrComputer");
 const userVsComButton = document.getElementById("userVsCom");
 const userVsUserButton = document.getElementById("userVsUser");
@@ -34,21 +34,19 @@ const fullscreenButton = document.getElementById("fullscreen-button");
 fullscreenButton.addEventListener("click", () => {
   if (document.fullscreenElement) {
     // Exit fullscreen mode
-    document.exitFullscreen()
-      .catch((err) => {
-        console.error("Error exiting fullscreen:", err);
-      });
+    document.exitFullscreen().catch((err) => {
+      console.error("Error exiting fullscreen:", err);
+    });
   } else {
     // Enter fullscreen mode
-    document.documentElement.requestFullscreen()
-      .catch((err) => {
-        console.error("Error entering fullscreen:", err);
-      });
+    document.documentElement.requestFullscreen().catch((err) => {
+      console.error("Error entering fullscreen:", err);
+    });
   }
 });
 
-
 restartButton.addEventListener("click", function () {
+  alien1Element.classList.add("show");
   changeIdTemporarily();
   restartGame();
 });
@@ -294,7 +292,7 @@ function check4moves() {
 
   return move; // If no winning move found, return blocking move (if any)
 }
-
+alien1Element.classList.add("show");
 function endGame(draw) {
   if (draw) {
     const drawCell = "draw-cell";
@@ -302,6 +300,7 @@ function endGame(draw) {
       cell.classList.add(drawCell);
     });
     winningMessageTextElement.innerText = "Draw!";
+    alien1Element.classList.remove("show");
     setTimeout(() => {
       cellElements.forEach((cell) => {
         cell.classList.remove(drawCell);
@@ -309,6 +308,10 @@ function endGame(draw) {
     }, 1000);
   } else {
     winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+    if (circleTurn && computerMode) {
+      // X's wins, so add the "show" class to #alien1
+      alien1Element.classList.remove("show");
+    }
   }
 
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
