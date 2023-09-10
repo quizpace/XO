@@ -61,7 +61,32 @@ function toggleBorders() {
   });
 }
 
-// Add an event listener to the img element to trigger toggleBorders
+// Function to toggle warning styles for cell elements
+function toggleWarningStyles() {
+  const cellElements = document.querySelectorAll(".cell[data-cell]");
+
+  cellElements.forEach((element) => {
+    // Check if the element already has the 'with-warning-styles' class
+    if (element.classList.contains("with-warning-styles")) {
+      // If it has the class, remove it to turn off the warning styles
+      element.classList.remove("with-warning-styles");
+    } else {
+      // If it doesn't have the class, add it to turn on the warning styles
+      element.classList.add("with-warning-styles");
+    }
+  });
+}
+
+function toggleShadow() {
+  const cells = document.querySelectorAll('.cell');
+
+  cells.forEach((cell) => {
+      cell.classList.toggle('fx');
+  });
+}
+
+const imgElement2 = document.getElementById("warning");
+imgElement2.addEventListener("click", toggleWarningStyles);
 const imgElement = document.getElementById("glas");
 imgElement.addEventListener("click", toggleBorders);
 

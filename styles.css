@@ -158,7 +158,7 @@ body {
 #aship {
   width: 10%;
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.3;
   animation: moveAround 100s linear infinite;
   transform-origin: center center;
   filter: drop-shadow(0 0 0.6vmin #e84037);
@@ -183,13 +183,23 @@ body {
   filter: drop-shadow(0 0 4vmin #9b18f8);
 }
 
+
 #alien2 {
   width: 40%;
   position: absolute;
   animation: moveAround 30s linear infinite;
   animation: moveAroundSpin 15s linear infinite;
   transform-origin: center center;
-  opacity: 0.23;
+  opacity: 0.20;
+}
+
+#alien2:hover {
+  width: 40%;
+  position: absolute;
+  animation: moveAround 30s linear infinite;
+  animation: moveAroundSpin 15s linear infinite;
+  transform-origin: center center;
+  opacity: 0.33;
 }
 
 #alien1.show {
@@ -209,6 +219,7 @@ body {
   width: 6%;
   position: absolute;
   opacity: 0.8;
+  cursor: pointer;
   top: 10%; /* Adjust the top position */
   left: 80%; /* Adjust the left position */
   animation: spinAndMove 20s linear infinite; /* Adjust the animation duration as needed */
@@ -269,6 +280,7 @@ body {
   /* Adjust the animation duration as needed */
   transform-origin: center center; /* Set the rotation origin to the center of the image */
   opacity: 1;
+  cursor: pointer;
   filter: drop-shadow(0 0 1vmin #82fd1d);
 }
 
@@ -648,10 +660,13 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
   animation: spin 3s linear 1s 1 normal forwards; /* Add the spin animation here */
-  filter: drop-shadow(0 0 0.2vmin #733a76);
+  /* filter: drop-shadow(0 0 0.2vmin #733a76); */
 }
 .cell.with-border {
   border-radius: 20%;
+}
+.cell.with-warning-styles {
+  filter: drop-shadow(0 0 1.2vmin #733a76);
 }
 
 @keyframes spin {
@@ -664,9 +679,16 @@ body {
 }
 
 .cell:hover {
-  box-shadow: 0 0 9px 1px rgba(103, 4, 123, 0.7),
-    0 0 5px 2px rgba(227, 231, 221, 0.5), 0 0 5px 5px rgba(240, 239, 235, 0.5),
-    0 0 5px 2px rgba(130, 27, 181, 0.7), 0 0 5px 1px rgba(129, 7, 228, 0.3);
+  box-shadow: 0 0 9px 1px rgba(103, 4, 123, 0.7), 0 0 3px 1px #b4d950,
+    0 0 1px 0.2px #e2662e, 0 4px 4px rgba(115, 10, 234, 0.7),
+    0 0 10px 2px rgba(246, 242, 248, 0.3);
+  opacity: 0.9;
+}
+
+.cell.fx:hover {
+  box-shadow: 0 0 70px 1px rgba(103, 4, 123, 0.7), 0 0 5px 0.7px #b4d950,
+    0 0 9px 0.1px #e2662e, 0 1000px 1500px rgba(115, 10, 234, 0.7),
+    0 0 10px 0px rgba(94, 3, 139, 0.3);
   opacity: 0.9;
 }
 
@@ -707,7 +729,7 @@ body {
 .cell.x::after {
   background-color: #b4d950;
   box-shadow: 0 0 2px #b4d950;
-  filter: drop-shadow(0 0 0.4vmin #b4d950);
+  filter: drop-shadow(0 0 0.6vmin #b4d950);
   /* border-radius: 50%; */
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
@@ -715,7 +737,7 @@ body {
 .cell.circle::before {
   background-color: #e2662e;
   box-shadow: 0 0 5px #e2662e;
-  filter: drop-shadow(0 0 0.4vmin #e2662e);
+  filter: drop-shadow(0 0 0.6vmin #e2662e);
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
 
@@ -1023,6 +1045,7 @@ body {
   /* background-color: rgba(2, 45, 2, 0.9); */
   /* background-color: rgba(29, 0, 30, 0.9); */
   background-color: rgba(24, 2, 39, 0.9);
+    /* background-color: rgba(48, 8, 60, 0.9); */
   justify-content: center;
   align-items: center;
   color: #e84037;
