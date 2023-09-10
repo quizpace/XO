@@ -232,6 +232,7 @@ body {
   top: 34%; /* Adjust the top position */
   left: 6%;
   position: absolute;
+  cursor: pointer;
   /* Adjust the animation duration as needed */
   transform-origin: center center; /* Set the rotation origin to the center of the image */
   opacity: 0.1;
@@ -259,7 +260,6 @@ body {
   opacity: 0.06;
   filter: drop-shadow(0 0 1vmin #ccfd1d);
 }
-
 
 #warning:hover {
   width: 9%;
@@ -304,9 +304,6 @@ body {
   filter: drop-shadow(0 0 2vmin #abedf3);
 }
 
-
-
-
 #purple {
   position: absolute;
   top: 40vh;
@@ -341,8 +338,6 @@ body {
   opacity: 0.27;
   animation: float-in-space 5s ease-in-out infinite; /* Adjust the animation duration as needed */
 }
-
-
 
 #purple2 {
   position: absolute;
@@ -637,9 +632,6 @@ body {
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, auto);
-
-  /* filter: drop-shadow(0 0 0vmin #37f5cf); */
-  /* filter: drop-shadow(0 0 1vmin #59039b); */
 }
 .boardglow {
   filter: drop-shadow(0 0 1vmin #59039b);
@@ -656,7 +648,10 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
   animation: spin 3s linear 1s 1 normal forwards; /* Add the spin animation here */
-  filter: drop-shadow(0 0 0.1vmin #733a76);
+  filter: drop-shadow(0 0 0.2vmin #733a76);
+}
+.cell.with-border {
+  border-radius: 20%;
 }
 
 @keyframes spin {
@@ -712,7 +707,7 @@ body {
 .cell.x::after {
   background-color: #b4d950;
   box-shadow: 0 0 2px #b4d950;
-  /* filter: drop-shadow(0 0 1vmin #b4d950); */
+  filter: drop-shadow(0 0 0.4vmin #b4d950);
   /* border-radius: 50%; */
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
@@ -720,7 +715,7 @@ body {
 .cell.circle::before {
   background-color: #e2662e;
   box-shadow: 0 0 5px #e2662e;
-  /* filter: drop-shadow(0 0 1vmin #e2662e); */
+  filter: drop-shadow(0 0 0.4vmin #e2662e);
   /* Adjust the color and spread (10px in this example) to control the glow effect */
 }
 
@@ -866,6 +861,15 @@ body {
   z-index: 1000;
 }
 
+#borderbut {
+  font-size: 1.9rem;
+  color: #e84037;
+  right: 50%;
+  cursor: pointer;
+  border-radius: 30%;
+  opacity: 0.8;
+  transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
 /* Style the main menu button */
 #mainMenuButton,
 #fullscreen-button {

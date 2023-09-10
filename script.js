@@ -45,6 +45,26 @@ fullscreenButton.addEventListener("click", () => {
   }
 });
 
+// Function to toggle borders for cell elements
+function toggleBorders() {
+  const cellElements = document.querySelectorAll(".cell[data-cell]");
+
+  cellElements.forEach((element) => {
+    // Check if the element already has the 'with-border' class
+    if (element.classList.contains("with-border")) {
+      // If it has the class, remove it to turn off the border
+      element.classList.remove("with-border");
+    } else {
+      // If it doesn't have the class, add it to turn on the border
+      element.classList.add("with-border");
+    }
+  });
+}
+
+// Add an event listener to the img element to trigger toggleBorders
+const imgElement = document.getElementById("glas");
+imgElement.addEventListener("click", toggleBorders);
+
 restartButton.addEventListener("click", function () {
   alien1Element.classList.add("show");
   changeIdTemporarily();
