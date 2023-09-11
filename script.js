@@ -11,7 +11,7 @@ const WINNING_COMBINATIONS = [
   [2, 4, 6],
 ];
 const muteAllButton = document.getElementById("mute-buttons");
-const muteToggleButton = document.getElementById("sun");
+const muteToggleButton = document.getElementById("music-on-off");
 const backgroundMusic = document.getElementById("background-music");
 const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
@@ -78,10 +78,10 @@ function toggleWarningStyles() {
 }
 
 function toggleShadow() {
-  const cells = document.querySelectorAll('.cell');
+  const cells = document.querySelectorAll(".cell");
 
   cells.forEach((cell) => {
-      cell.classList.toggle('fx');
+    cell.classList.toggle("fx");
   });
 }
 
@@ -91,10 +91,15 @@ const imgElement = document.getElementById("glas");
 imgElement.addEventListener("click", toggleBorders);
 
 restartButton.addEventListener("click", function () {
+  // Hide the restart button
+  restartButton.style.display = "none";
+
+  // Add your other logic here
   alien1Element.classList.add("show");
   changeIdTemporarily();
   restartGame();
 });
+
 userOrComputerElement.classList.add("show");
 userVsComButton.addEventListener("click", userVsCom);
 userVsUserButton.addEventListener("click", userVsUser);
@@ -103,11 +108,28 @@ muteAllButton.addEventListener("click", toggleSound);
 
 muteToggleButton.addEventListener("click", () => {
   backgroundMusic.muted = !backgroundMusic.muted;
+
+  // Check if backgroundMusic is muted and apply opacity changes to "off" and "on" elements accordingly
+  const offElement = document.getElementById("off");
+  const onElement = document.getElementById("on");
+
+  if (backgroundMusic.muted) {
+    // Apply opacity changes when not muted (for example, set "on" to lower opacity and reset "off" to full opacity)
+    offElement.style.opacity = "1"; // Reset to full opacity for "off"
+    onElement.style.opacity = "0.5"; // Adjust the opacity value as needed
+  } else {
+    // Apply opacity changes when muted (for example, set "off" to lower opacity and reset "on" to full opacity)
+    offElement.style.opacity = "0.5"; // Adjust the opacity value as needed
+    onElement.style.opacity = "1"; // Reset to full opacity for "on"
+  }
 });
 
 function toggleSound() {
   isSoundMuted = !isSoundMuted;
-
+  const muteSound = document.getElementById("click-sound2");
+  muteSound.pause();
+  muteSound.currentTime = 0;
+  muteSound.play();
   // Toggle individual sounds
   const oTurnSound = document.getElementById("o-turn-sound");
   const xTurnSound = document.getElementById("x-turn-sound");
@@ -117,7 +139,7 @@ function toggleSound() {
   xTurnSound.muted = isSoundMuted;
   clickSound.muted = isSoundMuted;
 
-  muteAllButton.innerHTML = isSoundMuted ? "🔇" : "🔊";
+  muteAllButton.innerHTML = isSoundMuted ? "📍" : "🕹️";
 }
 
 function playBackgroundMusic() {
@@ -138,7 +160,7 @@ function changeIdTemporarily() {
 }
 
 function userVsCom() {
-  const buttonSound = document.getElementById("click-sound");
+  const buttonSound = document.getElementById("click-sound4");
   buttonSound.pause();
   buttonSound.currentTime = 0;
   buttonSound.play();
@@ -154,7 +176,7 @@ function isValidMove(cell) {
 }
 
 function userVsUser() {
-  const buttonSound = document.getElementById("click-sound");
+  const buttonSound = document.getElementById("click-sound4");
   buttonSound.pause();
   buttonSound.currentTime = 0;
   buttonSound.play();
@@ -179,7 +201,7 @@ function restartGame() {
 }
 
 function mainMenu() {
-  const menuSound = document.getElementById("click-sound");
+  const menuSound = document.getElementById("click-sound5");
   menuSound.pause();
   menuSound.currentTime = 0;
   menuSound.play();
@@ -385,6 +407,11 @@ function endGame(draw) {
       });
     }
     winningMessageElement.classList.add("show");
+
+    // Add a delay for showing the restart button after winning message appears
+    setTimeout(() => {
+      restartButton.style.display = "block";
+    }, 2000); // Adjust the delay time as needed
   }, 1500);
 }
 

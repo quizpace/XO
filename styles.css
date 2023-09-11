@@ -183,14 +183,13 @@ body {
   filter: drop-shadow(0 0 4vmin #9b18f8);
 }
 
-
 #alien2 {
   width: 40%;
   position: absolute;
   animation: moveAround 30s linear infinite;
   animation: moveAroundSpin 15s linear infinite;
   transform-origin: center center;
-  opacity: 0.20;
+  opacity: 0.2;
 }
 
 #alien2:hover {
@@ -447,7 +446,7 @@ body {
   height: 14%; /* Set the height to whatever suits your layout */
 }
 
-#sun {
+#music-on-off {
   border: none;
   color: #e84037;
   padding: 1% 2%;
@@ -500,8 +499,23 @@ body {
   border-radius: 30%;
   cursor: pointer;
   position: absolute;
-  bottom: 100%;
-  right: 8%; /* Adjust the right position if needed */
+  bottom: 120%;
+  left: 50%;
+  opacity: 20%; /* Adjust the right position if needed */
+  filter: drop-shadow(0 0 0.5vmin #e10f0f);
+}
+
+#mute-buttons:hover {
+  font-size: 200%;
+  border: none;
+  padding: 2% 3%;
+  border-radius: 30%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  opacity: 70%; /* Adjust the right position if needed */
+  filter: drop-shadow(0 0 0.5vmin #e10f0f);
 }
 
 /* Animation for typing text effect */
@@ -545,7 +559,8 @@ body {
   font-family: "Orbitron", sans-serif;
   transition: transform 0.2s ease-in-out;
 }
-#userVsUser {
+#userVsUser,
+#musicsun {
   font-family: "Orbitron", sans-serif;
   transition: transform 0.2s ease-in-out;
 }
@@ -554,6 +569,24 @@ body {
 #userVsCom:hover,
 #userVsUser:hover {
   transform: scale(1.1);
+}
+
+/* Define the animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the restart button */
+#restartButton {
+  animation-name: fadeIn;
+  animation-duration: 1s; /* Adjust the duration as needed */
+  animation-fill-mode: forwards;
+  display: none; /* Hide the button by default */
 }
 
 .main {
@@ -973,12 +1006,9 @@ body {
   width: 28vh;
   background-image: url("drawin.png"); /* Replace with the path to your image */
   background-size: cover; /* Scale the background image to cover the element */
-  animation: winning-cell-x-animation 2s ease-in-out,
-    draw-cell-animation 2s ease-in-out infinite,
-    crazy-animation 2s linear infinite; /* Apply the "crazy" animation */
-  box-shadow: 0 0 50px rgba(200, 209, 229, 0.7);
-  opacity: 0.2;
-  /* Adjust the color and spread (50px in this example) to control the glow effect */
+  animation: winning-cell-x-animation 1s ease-in-out,
+    draw-cell-animation 1s ease-in-out infinite,
+    focus-in-contract-bck 1s ease-in-out, crazy-animation 1s linear infinite; /* Apply the "crazy" animation */
 }
 
 .winning-cell-x {
@@ -1045,13 +1075,52 @@ body {
   /* background-color: rgba(2, 45, 2, 0.9); */
   /* background-color: rgba(29, 0, 30, 0.9); */
   background-color: rgba(24, 2, 39, 0.9);
-    /* background-color: rgba(48, 8, 60, 0.9); */
+  /* background-color: rgba(48, 8, 60, 0.9); */
   justify-content: center;
   align-items: center;
   color: #e84037;
   font-size: 10rem;
   flex-direction: column;
-  opacity: 0.85;
+  opacity: 0.75;
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 0.5em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+    transform: translateZ(12px);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the text element */
+.winning-message-text {
+  animation: focus-in-contract-bck 1.5s ease-in-out,
+    float-in-space 5s ease-in-out infinite;
 }
 
 .winning-message button {
